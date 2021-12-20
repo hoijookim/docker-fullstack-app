@@ -1,9 +1,9 @@
-version: "2.4"
+version: "3"
 services:
   frontend:
     image: hoijookim/docker-frontend
     build:
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
       context: ./frontend
     volumes:
       - /app/node_modules
@@ -27,7 +27,7 @@ services:
   backend:
     image: hoijookim/docker-backend
     build:
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
       context: ./backend
     container_name: app_backend
     volumes:
