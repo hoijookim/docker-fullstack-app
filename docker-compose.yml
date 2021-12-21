@@ -2,9 +2,6 @@ version: "3"
 services:
   frontend:
     image: hoijookim/docker-frontend
-    build:
-      dockerfile: Dockerfile
-      context: ./frontend
     volumes:
       - /app/node_modules
       - ./frontend:/app
@@ -14,9 +11,6 @@ services:
   nginx:
     restart: always
     image: hoijookim/docker-nginx
-    build:
-      dockerfile: Dockerfile
-      context: ./nginx
     ports:
       - "80:80"
     mem_limit: 128m
@@ -26,9 +20,6 @@ services:
 
   backend:
     image: hoijookim/docker-backend
-    build:
-      dockerfile: Dockerfile
-      context: ./backend
     container_name: app_backend
     volumes:
       - /app/node_modules
